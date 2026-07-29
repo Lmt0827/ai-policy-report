@@ -3,7 +3,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const chromePath = '/usr/bin/google-chrome';
+const chromePath = '/usr/bin/google-chrome-stable';
 const port = 8765;
 
 // 简单的静态文件服务器
