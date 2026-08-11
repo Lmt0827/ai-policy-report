@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI政策日报 - 2026年8月12日</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; background: #f5f7fa; color: #333; }
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 2rem; text-align: center; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .header p { opacity: 0.9; }
+        .tabs { display: flex; justify-content: center; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .tab { padding: 1rem 2rem; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 500; color: #666; transition: all 0.3s; }
+        .tab.active { color: #1e3a8a; border-bottom-color: #1e3a8a; }
+        .tab:hover { color: #1e3a8a; }
+        .content { display: none; max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .content.active { display: block; }
+        .section { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .section h2 { font-size: 1.5rem; color: #1e3a8a; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #e5e7eb; }
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #e5e7eb; }
+        .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -1.85rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: #3b82f6; border: 2px solid white; box-shadow: 0 0 0 3px #dbeafe; }
+        .timeline-date { font-weight: 700; color: #1e3a8a; margin-bottom: 0.5rem; }
+        .timeline-content { background: #f8fafc; padding: 1rem; border-radius: 8px; }
+        .timeline-content h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #111; }
+        .timeline-content p { font-size: 0.9rem; color: #555; margin-bottom: 0.3rem; }
+        .timeline-content a { color: #2563eb; text-decoration: none; font-size: 0.85rem; }
+        .timeline-content a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-right: 0.5rem; }
+        .badge-national { background: #dbeafe; color: #1e40af; }
+        .badge-local { background: #dcfce7; color: #166534; }
+        .badge-foreign { background: #fef3c7; color: #92400e; }
+        .policy-card { border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 1.5rem; overflow: hidden; }
+        .policy-header { background: #f8fafc; padding: 1rem 1.5rem; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+        .policy-header h3 { font-size: 1.1rem; color: #111; margin: 0; flex: 1; }
+        .policy-date { color: #6b7280; font-size: 0.85rem; }
+        .policy-body { padding: 1.5rem; }
+        .policy-table { width: 100%; border-collapse: collapse; }
+        .policy-table th { text-align: left; padding: 0.6rem 0; width: 120px; color: #374151; font-weight: 600; vertical-align: top; }
+        .policy-table td { padding: 0.6rem 0; color: #4b5563; line-height: 1.6; }
+        .policy-table a { color: #2563eb; word-break: break-all; }
+        .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+        .chart-box { text-align: center; }
+        .chart-box img { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .chart-box p { margin-top: 0.5rem; color: #6b7280; font-size: 0.9rem; }
+        .keywords { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; padding: 1rem; }
+        .keyword-tag { background: linear-gradient(135deg, #dbeafe, #e0e7ff); color: #1e3a8a; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 500; }
+        .highlight { background: #fef3c7; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+        .highlight h4 { color: #92400e; margin-bottom: 0.5rem; }
+        .btn-download { display: inline-block; background: #1e3a8a; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; margin-top: 1rem; }
+        .btn-download:hover { background: #1e40af; }
+        @media print {
+            .tabs { display: none; }
+            .content { display: block !important; }
+            .section { break-inside: avoid; }
+            .policy-card { break-inside: avoid; }
+            .timeline-item { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI政策日报</h1>
+        <p>每日AI相关政策挖掘与分析报告 | 报告日期：2026年8月12日</p>
+        <p>数据覆盖：2026年8月1日 - 2026年8月12日</p>
+        <a href="report.pdf" class="btn-download" download>下载PDF报告</a>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('domestic')">国内政策分析</div>
+        <div class="tab" onclick="switchTab('foreign')">国外政策分析</div>
+        <div class="tab" onclick="switchTab('analysis')">数据可视化与热点分析</div>
+    </div>
+
+    <!-- 国内政策页 -->
+    <div id="domestic" class="content active">
+        <div class="section">
+            <h2>今日国内AI政策发布时间线（近3日）</h2>
+            <div class="timeline">
+                
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-11</div>
+                <div class="timeline-content">
+                    <h4>黑龙江省推进"人工智能+教育"行动方案</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>黑龙江省</p>
+                    <p><strong>发布单位：</strong>黑龙江省教育厅</p>
+                    <p><strong>政策类型：</strong>教育</p>
+                    <p>根据《教育强国建设规划纲要（2024—2035年）》等战略部署，推进人工智能与教育教学深度融合。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/bfce0c72406c414abfab34c1fb43842a" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-11</div>
+                <div class="timeline-content">
+                    <h4>上海市进一步推动"AI+制造"发展的若干措施</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>上海市</p>
+                    <p><strong>发布单位：</strong>上海市经济和信息化委员会</p>
+                    <p><strong>政策类型：</strong>制造业</p>
+                    <p>推动关键核心技术攻关，强化工业数据治理，支持开展"模数共振"行动，最高支持2000万元。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/32967ad8fd4e40fda86f6ef3bd476494" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-11</div>
+                <div class="timeline-content">
+                    <h4>丽水市公共数据资源授权运营管理实施细则</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>浙江省丽水市</p>
+                    <p><strong>发布单位：</strong>丽水市大数据发展管理局</p>
+                    <p><strong>政策类型：</strong>数据治理</p>
+                    <p>规范公共数据资源授权运营管理，优化授权运营流程，提升数据开发利用水平。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/a83994b3022f4be2888dd49c7fbc123d" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-10</div>
+                <div class="timeline-content">
+                    <h4>东莞市加快建设"人工智能+"城市若干措施</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>广东省东莞市</p>
+                    <p><strong>发布单位：</strong>东莞市发展改革局（市智办）</p>
+                    <p><strong>政策类型：</strong>综合</p>
+                    <p>16条措施涵盖算力底座、数据资源、算法模型、中试基地、终端产业、应用场景、人才引育、安全治理等。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/29403de7739d40bbac5fdf0a4087f19e" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-10</div>
+                <div class="timeline-content">
+                    <h4>东莞市加快建设"人工智能+"城市实施方案（2026—2030年）</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>广东省东莞市</p>
+                    <p><strong>发布单位：</strong>东莞市政府</p>
+                    <p><strong>政策类型：</strong>综合</p>
+                    <p>全面推进技术创新、产业发展、行业应用和要素保障，推动人工智能赋能千行百业。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/6eea07f0d8234f3f9a2fccdfeea198e0" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-10</div>
+                <div class="timeline-content">
+                    <h4>孝感市本级公共数据资源授权运营实施细则（试行）</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>湖北省孝感市</p>
+                    <p><strong>发布单位：</strong>孝感市政务服务和大数据管理局</p>
+                    <p><strong>政策类型：</strong>数据治理</p>
+                    <p>规范开展市本级公共数据资源授权运营工作，遵循依法合规、公平公正、公益优先、合理收益原则。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/c5db6b04c74d40a6968041895522b102" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-10</div>
+                <div class="timeline-content">
+                    <h4>交通运输数据安全管理办法</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-national">国家</span></p>
+                    <p><strong>发布地区：</strong>全国</p>
+                    <p><strong>发布单位：</strong>交通运输部</p>
+                    <p><strong>政策类型：</strong>数据安全</p>
+                    <p>规范交通运输数据处理活动，保障数据安全，保护个人、组织合法权益，维护国家安全和公共利益。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/2fd055790d804392bfcd259d47d83589" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-10</div>
+                <div class="timeline-content">
+                    <h4>珠海市人工智能赋能制造业高质量发展行动方案（2026—2028年）</h4>
+                    <p><strong>政策级别：</strong><span class="badge badge-local">地方</span></p>
+                    <p><strong>发布地区：</strong>广东省珠海市</p>
+                    <p><strong>发布单位：</strong>珠海市工业和信息化局</p>
+                    <p><strong>政策类型：</strong>制造业</p>
+                    <p>深入实施"人工智能+制造"专项行动，推动人工智能创新与制造业应用"双向赋能"。</p>
+                    <a href="https://www.cdoview.cn/policy_detail/9de8551ba81445b0b743cf3974bb821e" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>本月国内政策详细列表</h2>
+            <p style="color:#6b7280;margin-bottom:1rem;">本月共收录国内AI相关政策 <strong>15</strong> 项，其中国家级 <strong>5</strong> 项，地方级 <strong>10</strong> 项。</p>
+            
+        <div class="policy-card" id="domestic-0">
+            <div class="policy-header">
+                <h3>黑龙江省推进"人工智能+教育"行动方案</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-11</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>黑龙江省</td></tr>
+                    <tr><th>发布单位</th><td>黑龙江省教育厅</td></tr>
+                    <tr><th>监督单位</th><td>黑龙江省政府</td></tr>
+                    <tr><th>政策类型</th><td>教育</td></tr>
+                    <tr><th>政策摘要</th><td>根据《教育强国建设规划纲要（2024—2035年）》等战略部署，推进人工智能与教育教学深度融合。</td></tr>
+                    <tr><th>详细要求</th><td>落实立德树人，推进AI赋能教育教学、教育管理、教育评价等全流程。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/bfce0c72406c414abfab34c1fb43842a" target="_blank">https://www.cdoview.cn/policy_detail/bfce0c72406c414abfab34c1fb43842a</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-1">
+            <div class="policy-header">
+                <h3>上海市进一步推动"AI+制造"发展的若干措施</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-11</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>上海市</td></tr>
+                    <tr><th>发布单位</th><td>上海市经济和信息化委员会</td></tr>
+                    <tr><th>监督单位</th><td>上海市政府</td></tr>
+                    <tr><th>政策类型</th><td>制造业</td></tr>
+                    <tr><th>政策摘要</th><td>推动关键核心技术攻关，强化工业数据治理，支持开展"模数共振"行动，最高支持2000万元。</td></tr>
+                    <tr><th>详细要求</th><td>13条具体措施涵盖技术攻关、数据治理、智能体应用、工业互联网平台升级、标杆场景建设、人才培育等。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/32967ad8fd4e40fda86f6ef3bd476494" target="_blank">https://www.cdoview.cn/policy_detail/32967ad8fd4e40fda86f6ef3bd476494</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-2">
+            <div class="policy-header">
+                <h3>丽水市公共数据资源授权运营管理实施细则</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-11</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>浙江省丽水市</td></tr>
+                    <tr><th>发布单位</th><td>丽水市大数据发展管理局</td></tr>
+                    <tr><th>监督单位</th><td>丽水市政府</td></tr>
+                    <tr><th>政策类型</th><td>数据治理</td></tr>
+                    <tr><th>政策摘要</th><td>规范公共数据资源授权运营管理，优化授权运营流程，提升数据开发利用水平。</td></tr>
+                    <tr><th>详细要求</th><td>明确实施机构职责分工，遵循依法合规、公平公正、公益优先原则。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/a83994b3022f4be2888dd49c7fbc123d" target="_blank">https://www.cdoview.cn/policy_detail/a83994b3022f4be2888dd49c7fbc123d</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-3">
+            <div class="policy-header">
+                <h3>东莞市加快建设"人工智能+"城市若干措施</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-10</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>广东省东莞市</td></tr>
+                    <tr><th>发布单位</th><td>东莞市发展改革局（市智办）</td></tr>
+                    <tr><th>监督单位</th><td>东莞市政府</td></tr>
+                    <tr><th>政策类型</th><td>综合</td></tr>
+                    <tr><th>政策摘要</th><td>16条措施涵盖算力底座、数据资源、算法模型、中试基地、终端产业、应用场景、人才引育、安全治理等。</td></tr>
+                    <tr><th>详细要求</th><td>力争自建算力50000P以上，培育50个垂类大模型，推出100个以上高价值应用场景，建设5个以上市级人工智能赋能中心。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/29403de7739d40bbac5fdf0a4087f19e" target="_blank">https://www.cdoview.cn/policy_detail/29403de7739d40bbac5fdf0a4087f19e</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-4">
+            <div class="policy-header">
+                <h3>东莞市加快建设"人工智能+"城市实施方案（2026—2030年）</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-10</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>广东省东莞市</td></tr>
+                    <tr><th>发布单位</th><td>东莞市政府</td></tr>
+                    <tr><th>监督单位</th><td>广东省政府</td></tr>
+                    <tr><th>政策类型</th><td>综合</td></tr>
+                    <tr><th>政策摘要</th><td>全面推进技术创新、产业发展、行业应用和要素保障，推动人工智能赋能千行百业。</td></tr>
+                    <tr><th>详细要求</th><td>到2028年实现人工智能与传统产业、新兴产业、民生保障、政务服务等重点领域深度融合。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/6eea07f0d8234f3f9a2fccdfeea198e0" target="_blank">https://www.cdoview.cn/policy_detail/6eea07f0d8234f3f9a2fccdfeea198e0</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-5">
+            <div class="policy-header">
+                <h3>孝感市本级公共数据资源授权运营实施细则（试行）</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-10</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>湖北省孝感市</td></tr>
+                    <tr><th>发布单位</th><td>孝感市政务服务和大数据管理局</td></tr>
+                    <tr><th>监督单位</th><td>孝感市政府</td></tr>
+                    <tr><th>政策类型</th><td>数据治理</td></tr>
+                    <tr><th>政策摘要</th><td>规范开展市本级公共数据资源授权运营工作，遵循依法合规、公平公正、公益优先、合理收益原则。</td></tr>
+                    <tr><th>详细要求</th><td>依据《湖北省数据条例》《湖北省公共数据资源授权运营实施办法（试行）》等制定。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/c5db6b04c74d40a6968041895522b102" target="_blank">https://www.cdoview.cn/policy_detail/c5db6b04c74d40a6968041895522b102</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-6">
+            <div class="policy-header">
+                <h3>交通运输数据安全管理办法</h3>
+                <span class="badge badge-national">国家</span>
+                <span class="policy-date">2026-08-10</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>全国</td></tr>
+                    <tr><th>发布单位</th><td>交通运输部</td></tr>
+                    <tr><th>监督单位</th><td>国家数据安全局</td></tr>
+                    <tr><th>政策类型</th><td>数据安全</td></tr>
+                    <tr><th>政策摘要</th><td>规范交通运输数据处理活动，保障数据安全，保护个人、组织合法权益，维护国家安全和公共利益。</td></tr>
+                    <tr><th>详细要求</th><td>坚持"谁管业务，谁管业务数据，谁管数据安全"和"属地管理"原则，实行分级管理和分工负责。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/2fd055790d804392bfcd259d47d83589" target="_blank">https://www.cdoview.cn/policy_detail/2fd055790d804392bfcd259d47d83589</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-7">
+            <div class="policy-header">
+                <h3>珠海市人工智能赋能制造业高质量发展行动方案（2026—2028年）</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-10</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>广东省珠海市</td></tr>
+                    <tr><th>发布单位</th><td>珠海市工业和信息化局</td></tr>
+                    <tr><th>监督单位</th><td>珠海市政府</td></tr>
+                    <tr><th>政策类型</th><td>制造业</td></tr>
+                    <tr><th>政策摘要</th><td>深入实施"人工智能+制造"专项行动，推动人工智能创新与制造业应用"双向赋能"。</td></tr>
+                    <tr><th>详细要求</th><td>聚焦制造业研发设计、生产制造、质量管控、运营管理等重点环节，引领发展新质生产力。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/9de8551ba81445b0b743cf3974bb821e" target="_blank">https://www.cdoview.cn/policy_detail/9de8551ba81445b0b743cf3974bb821e</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-8">
+            <div class="policy-header">
+                <h3>广州市推动具身智能机器人产业高质量发展若干措施</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-07</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>广东省广州市</td></tr>
+                    <tr><th>发布单位</th><td>广州市工业和信息化局</td></tr>
+                    <tr><th>监督单位</th><td>广州市政府</td></tr>
+                    <tr><th>政策类型</th><td>机器人</td></tr>
+                    <tr><th>政策摘要</th><td>围绕创新研发、训练测试、企业成长、场景培育、赛事活动、金融赋能等推出系列举措。</td></tr>
+                    <tr><th>详细要求</th><td>力争到2029年实施重大科技攻关15项以上，集聚10家左右整机制造企业，实现2家左右企业进入国内"第一方阵"。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/7ca2d7f382e94769bae360f0a6f00c29" target="_blank">https://www.cdoview.cn/policy_detail/7ca2d7f382e94769bae360f0a6f00c29</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-9">
+            <div class="policy-header">
+                <h3>福建省推进"人工智能+"能源创新发展行动方案（2026—2030年）</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-07</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>福建省</td></tr>
+                    <tr><th>发布单位</th><td>福建省发改委、省能源局</td></tr>
+                    <tr><th>监督单位</th><td>福建省政府</td></tr>
+                    <tr><th>政策类型</th><td>能源</td></tr>
+                    <tr><th>政策摘要</th><td>促进人工智能与能源行业深度融合发展，推动"人工智能+"能源高质量发展。</td></tr>
+                    <tr><th>详细要求</th><td>落实《国家发展改革委国家能源局关于推进"人工智能+"能源高质量发展的实施意见》有关要求。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.cdoview.cn/policy_detail/f57c6eccb1b14101bab01f16db607c5e" target="_blank">https://www.cdoview.cn/policy_detail/f57c6eccb1b14101bab01f16db607c5e</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-10">
+            <div class="policy-header">
+                <h3>《智能网联汽车 自动驾驶系统安全要求》强制性国家标准</h3>
+                <span class="badge badge-national">国家</span>
+                <span class="policy-date">2026-08-07</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>全国</td></tr>
+                    <tr><th>发布单位</th><td>工业和信息化部、市场监管总局</td></tr>
+                    <tr><th>监督单位</th><td>国家标准委</td></tr>
+                    <tr><th>政策类型</th><td>汽车/标准</td></tr>
+                    <tr><th>政策摘要</th><td>强制性国家标准正式发布，规范智能网联汽车自动驾驶系统安全要求。</td></tr>
+                    <tr><th>详细要求</th><td>这是国内首个自动驾驶系统安全强制性国家标准，对推动智能网联汽车产业化具有重要意义。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://aihub.caict.ac.cn/docs?uuid=KC5dw2sSgtfg" target="_blank">https://aihub.caict.ac.cn/docs?uuid=KC5dw2sSgtfg</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-11">
+            <div class="policy-header">
+                <h3>交通运输部关于组织实施第一批"人工智能+交通运输"典型应用场景项目的通知</h3>
+                <span class="badge badge-national">国家</span>
+                <span class="policy-date">2026-08-07</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>全国</td></tr>
+                    <tr><th>发布单位</th><td>交通运输部</td></tr>
+                    <tr><th>监督单位</th><td>国务院</td></tr>
+                    <tr><th>政策类型</th><td>交通</td></tr>
+                    <tr><th>政策摘要</th><td>组织实施第一批"人工智能+交通运输"典型应用场景项目，推动AI在交通领域落地。</td></tr>
+                    <tr><th>详细要求</th><td>围绕出行智慧化、枢纽场站智能化等重点方向，推进AI技术与交通运输深度融合。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://aihub.caict.ac.cn/docs?uuid=KC5dw2sSgtfg" target="_blank">https://aihub.caict.ac.cn/docs?uuid=KC5dw2sSgtfg</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-12">
+            <div class="policy-header">
+                <h3>北京经开区2026年人工智能行业大模型应用落地支持申报通知</h3>
+                <span class="badge badge-local">地方</span>
+                <span class="policy-date">2026-08-03</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>北京经济技术开发区</td></tr>
+                    <tr><th>发布单位</th><td>北京经开区信息技术产业局</td></tr>
+                    <tr><th>监督单位</th><td>北京市政府</td></tr>
+                    <tr><th>政策类型</th><td>大模型</td></tr>
+                    <tr><th>政策摘要</th><td>开展2026年人工智能行业大模型应用落地支持申报，推动AI产业发展。</td></tr>
+                    <tr><th>详细要求</th><td>申报时间为2026年7月31日至8月19日，依据《北京经济技术开发区关于加快打造AI原生产业创新高地的若干政策》。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://open.beijing.gov.cn/html/yizhuang/zcqd/2026/8/1785742151631.html" target="_blank">https://open.beijing.gov.cn/html/yizhuang/zcqd/2026/8/1785742151631.html</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-13">
+            <div class="policy-header">
+                <h3>多部门围绕人工智能发展密集表态</h3>
+                <span class="badge badge-national">国家</span>
+                <span class="policy-date">2026-08-01</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>全国</td></tr>
+                    <tr><th>发布单位</th><td>国家发展改革委、工信部、海关总署、知识产权局、能源局、交通运输部、邮政局</td></tr>
+                    <tr><th>监督单位</th><td>国务院</td></tr>
+                    <tr><th>政策类型</th><td>综合</td></tr>
+                    <tr><th>政策摘要</th><td>多部门在新闻发布会上围绕人工智能发展密集表态，介绍相关工作部署。</td></tr>
+                    <tr><th>详细要求</th><td>涵盖算力布局、知识产权保护、能源应用、智慧口岸、交通出行、邮政物流等多个领域。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://news.cctv.cn/2026/08/01/ARTIiz5NKkmsqeju4a7u1n58260801.shtml" target="_blank">https://news.cctv.cn/2026/08/01/ARTIiz5NKkmsqeju4a7u1n58260801.shtml</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="domestic-14">
+            <div class="policy-header">
+                <h3>《人工智能合作发展行动计划》发布</h3>
+                <span class="badge badge-national">国家</span>
+                <span class="policy-date">2026-07-17</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布地区</th><td>全国</td></tr>
+                    <tr><th>发布单位</th><td>国家发展改革委</td></tr>
+                    <tr><th>监督单位</th><td>国务院</td></tr>
+                    <tr><th>政策类型</th><td>国际合作</td></tr>
+                    <tr><th>政策摘要</th><td>从数据、算力、生态、赋能、人才、规则、治理和伦理等方面提出八项行动。</td></tr>
+                    <tr><th>详细要求</th><td>优质数据供给、智能算力普惠、开源生态共享、人工智能深度赋能、数智人才共育、规则标准共建、安全治理协作、人工智能向善。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.gov.cn/yaowen/liebiao/202607/content_7075880.htm" target="_blank">https://www.gov.cn/yaowen/liebiao/202607/content_7075880.htm</a></td></tr>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- 国外政策页 -->
+    <div id="foreign" class="content">
+        <div class="section">
+            <h2>今日国外AI政策发布时间线（近两周）</h2>
+            <div class="timeline">
+                
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-02</div>
+                <div class="timeline-content">
+                    <h4>EU AI Act 全面生效执行</h4>
+                    <p><strong>发布国家/地区：</strong>欧盟</p>
+                    <p><strong>发布机构：</strong>European Commission</p>
+                    <p><strong>政策类型：</strong>综合监管</p>
+                    <p>欧盟《人工智能法》多数条款于2026年8月2日起全面适用，激活透明义务、全执法权力、举报人平台及机器可读AI内容标签。</p>
+                    <a href="https://www.aibusinessreview.org/2026/08/03/eu-ai-act-enforcement-powers-activate-august-2026/" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2026-08-02</div>
+                <div class="timeline-content">
+                    <h4>欧盟AI Act综合简化一揽子计划</h4>
+                    <p><strong>发布国家/地区：</strong>欧盟</p>
+                    <p><strong>发布机构：</strong>European Commission</p>
+                    <p><strong>政策类型：</strong>简化监管</p>
+                    <p>通过"综合简化一揽子计划"中有关AI的部分，将用于招聘、教育、执法和移民管理等高风险系统的部分义务推迟。</p>
+                    <a href="http://www.xinhuanet.com/20260731/3165dd0ca76f42d5ada4ed42b8824a9a/c.html" target="_blank">查看原文 &rarr;</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>本月国外政策详细列表</h2>
+            <p style="color:#6b7280;margin-bottom:1rem;">本月共收录国外AI相关政策 <strong>6</strong> 项，覆盖 <strong>5</strong> 个国家/地区。</p>
+            
+        <div class="policy-card" id="foreign-0">
+            <div class="policy-header">
+                <h3>EU AI Act 全面生效执行</h3>
+                <span class="badge badge-foreign">欧盟</span>
+                <span class="policy-date">2026-08-02</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>欧盟</td></tr>
+                    <tr><th>发布机构</th><td>European Commission</td></tr>
+                    <tr><th>政策类型</th><td>综合监管</td></tr>
+                    <tr><th>政策摘要</th><td>欧盟《人工智能法》多数条款于2026年8月2日起全面适用，激活透明义务、全执法权力、举报人平台及机器可读AI内容标签。</td></tr>
+                    <tr><th>详细要求</th><td>罚款最高可达3500万欧元或全球年营业额7%。全面 enforcement 覆盖聊天机器人透明义务、AI生成内容标签、高风险系统监管等。</td></tr>
+                    <tr><th>与前政策区别</th><td>2024年8月1日生效，2025年2月禁止条款先适用，2026年8月2日多数条款全面适用。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.aibusinessreview.org/2026/08/03/eu-ai-act-enforcement-powers-activate-august-2026/" target="_blank">https://www.aibusinessreview.org/2026/08/03/eu-ai-act-enforcement-powers-activate-august-2026/</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="foreign-1">
+            <div class="policy-header">
+                <h3>欧盟AI Act综合简化一揽子计划</h3>
+                <span class="badge badge-foreign">欧盟</span>
+                <span class="policy-date">2026-08-02</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>欧盟</td></tr>
+                    <tr><th>发布机构</th><td>European Commission</td></tr>
+                    <tr><th>政策类型</th><td>简化监管</td></tr>
+                    <tr><th>政策摘要</th><td>通过"综合简化一揽子计划"中有关AI的部分，将用于招聘、教育、执法和移民管理等高风险系统的部分义务推迟。</td></tr>
+                    <tr><th>详细要求</th><td>部分高风险系统的全面合规日期延后，但透明义务和禁止条款仍按原计划执行。</td></tr>
+                    <tr><th>与前政策区别</th><td>原定于2026年8月2日全面适用所有高风险系统义务，现部分推迟至2027年8月。</td></tr>
+                    <tr><th>数据来源</th><td><a href="http://www.xinhuanet.com/20260731/3165dd0ca76f42d5ada4ed42b8824a9a/c.html" target="_blank">http://www.xinhuanet.com/20260731/3165dd0ca76f42d5ada4ed42b8824a9a/c.html</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="foreign-2">
+            <div class="policy-header">
+                <h3>美国第14409号行政令：AI安全新规</h3>
+                <span class="badge badge-foreign">美国</span>
+                <span class="policy-date">2026-06-02</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>美国</td></tr>
+                    <tr><th>发布机构</th><td>白宫/美国总统</td></tr>
+                    <tr><th>政策类型</th><td>安全评估</td></tr>
+                    <tr><th>政策摘要</th><td>要求60天内建立前沿模型机密评测流程，最强闭源模型需自愿送测，开放权重直接放行。</td></tr>
+                    <tr><th>详细要求</th><td>主要盯住达到特定网络能力门槛的美国闭源模型。框架已曝光定稿，要求企业进行安全评估。</td></tr>
+                    <tr><th>与前政策区别</th><td>相比2023年拜登AI行政令，新规更聚焦于前沿模型的安全评测和机密评估流程。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://36kr.com/p/3927933158881417" target="_blank">https://36kr.com/p/3927933158881417</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="foreign-3">
+            <div class="policy-header">
+                <h3>日本AI Promotion Act</h3>
+                <span class="badge badge-foreign">日本</span>
+                <span class="policy-date">2026-05</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>日本</td></tr>
+                    <tr><th>发布机构</th><td>日本内阁府</td></tr>
+                    <tr><th>政策类型</th><td>促进发展</td></tr>
+                    <tr><th>政策摘要</th><td>日本《人工智能振兴法》于2025年5月获批准，采取原则导向、轻触式监管方式。</td></tr>
+                    <tr><th>详细要求</th><td>与欧盟风险导向模式不同，日本采取鼓励创新、原则导向的轻监管方式，详细指引预计后续出台。</td></tr>
+                    <tr><th>与前政策区别</th><td>此前日本主要通过行业指引和软法治理AI，该法是其首个综合性AI立法。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://aiwiki.ai/wiki/ai_regulation" target="_blank">https://aiwiki.ai/wiki/ai_regulation</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="foreign-4">
+            <div class="policy-header">
+                <h3>英国Statutory Report on Copyright and AI</h3>
+                <span class="badge badge-foreign">英国</span>
+                <span class="policy-date">2026-03-18</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>英国</td></tr>
+                    <tr><th>发布机构</th><td>英国政府/知识产权局</td></tr>
+                    <tr><th>政策类型</th><td>版权</td></tr>
+                    <tr><th>政策摘要</th><td>政府放弃文本和数据挖掘（TDM）的opt-out模式，转向市场主导许可。当前英国法律下，未经授权在版权材料上训练AI可能违法。</td></tr>
+                    <tr><th>详细要求</th><td>标志着英国AI版权政策的决定性转变，从宽泛的数据挖掘例外转向许可市场模式。</td></tr>
+                    <tr><th>与前政策区别</th><td>此前曾提议允许AI在版权作品上训练，除非权利人明确opt-out，现完全放弃该方案。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://www.1stopasia.com/blog/ai-complience-under-law-regulatory-intelligence-report-pt-2/" target="_blank">https://www.1stopasia.com/blog/ai-complience-under-law-regulatory-intelligence-report-pt-2/</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="policy-card" id="foreign-5">
+            <div class="policy-header">
+                <h3>韩国AI Basic Act 正式实施</h3>
+                <span class="badge badge-foreign">韩国</span>
+                <span class="policy-date">2026-01-22</span>
+            </div>
+            <div class="policy-body">
+                <table class="policy-table">
+                    <tr><th>发布国家</th><td>韩国</td></tr>
+                    <tr><th>发布机构</th><td>韩国科学技术信息通信部</td></tr>
+                    <tr><th>政策类型</th><td>综合框架</td></tr>
+                    <tr><th>政策摘要</th><td>韩国《人工智能基本法》于2026年1月22日正式实施，建立全面的AI治理框架和安全研究所。</td></tr>
+                    <tr><th>详细要求</th><td>韩国成为全球首批通过全面AI框架法律的国家之一，采取综合框架法+安全研究所的模式。</td></tr>
+                    <tr><th>与前政策区别</th><td>该法于2024年通过，经过一年过渡期后于2026年1月正式实施。</td></tr>
+                    <tr><th>数据来源</th><td><a href="https://aiwiki.ai/wiki/ai_regulation" target="_blank">https://aiwiki.ai/wiki/ai_regulation</a></td></tr>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- 数据分析页 -->
+    <div id="analysis" class="content">
+        <div class="section">
+            <h2>政策发布趋势与分布</h2>
+            <div class="chart-grid">
+                <div class="chart-box">
+                    <img src="assets/domestic_trend.png" alt="国内政策发布趋势">
+                    <p>国内AI政策发布趋势（按日期）</p>
+                </div>
+                <div class="chart-box">
+                    <img src="assets/domestic_types.png" alt="国内政策类型分布">
+                    <p>国内AI政策类型分布</p>
+                </div>
+                <div class="chart-box">
+                    <img src="assets/policy_compare.png" alt="国内外政策数量对比">
+                    <p>国内外AI政策数量对比</p>
+                </div>
+                <div class="chart-box">
+                    <img src="assets/foreign_countries.png" alt="国外政策国家分布">
+                    <p>国外AI政策国家/地区分布</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>关键词与热频率词分析</h2>
+            <div class="chart-box" style="margin-bottom:2rem;">
+                <img src="assets/top_keywords.png" alt="高频关键词">
+                <p>国内AI政策高频关键词 TOP15</p>
+            </div>
+            <div class="chart-box">
+                <img src="assets/wordcloud_domestic.png" alt="关键词词云">
+                <p>国内AI政策关键词词云</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>政策级别与区域分布</h2>
+            <div class="chart-box">
+                <img src="assets/level_dist.png" alt="政策级别分布">
+                <p>国内AI政策级别分布（国家 vs 地方）</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>热点建设内容与趋势分析</h2>
+            <div class="highlight">
+                <h4>1. 算力基础设施建设成重中之重</h4>
+                <p>本月多个省市（东莞、上海、北京等）密集出台算力相关政策，强调自建算力、智算中心、算力调度平台等。东莞市明确提出自建算力50000P以上，上海市支持租用算力最高补贴4000万元。</p>
+            </div>
+            <div class="highlight">
+                <h4>2. "人工智能+制造"深度推进</h4>
+                <p>上海、珠海等地发布专项措施推动AI赋能制造业，聚焦工业大模型、工业智能体、工业互联网平台升级等。政策从资金扶持（最高2000万元）到场景建设全方位支持。</p>
+            </div>
+            <div class="highlight">
+                <h4>3. 具身智能机器人成为新赛道</h4>
+                <p>广州市出台专项政策推动具身智能机器人产业，从技术研发、训练测试、场景培育到金融赋能全链条支持，力争到2029年集聚10家左右整机制造企业。</p>
+            </div>
+            <div class="highlight">
+                <h4>4. 数据治理与公共数据授权运营提速</h4>
+                <p>丽水、孝感等地出台公共数据资源授权运营细则，交通运输部发布数据安全管理办法，显示数据要素市场化配置和安全治理同步推进。</p>
+            </div>
+            <div class="highlight">
+                <h4>5. 欧盟AI法全面生效，全球监管进入新阶段</h4>
+                <p>8月2日欧盟AI Act多数条款全面适用，罚款高达全球营业额7%，对全球AI企业产生深远影响。美国同步推进前沿模型安全评测，韩国AI基本法正式实施，全球AI监管格局加速成型。</p>
+            </div>
+            <div class="highlight">
+                <h4>6. 多部门协同推进AI落地</h4>
+                <p>8月1日发改委、工信部、海关总署、知识产权局、能源局、交通运输部、邮政局等多部门同时发声，显示AI已从单一技术部门事务上升为跨部门国家战略。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>关键词标签云</h2>
+            <div class="keywords">
+                <span class="keyword-tag" style="font-size:24px">人工智能 (23)</span>
+<span class="keyword-tag" style="font-size:23px">发展 (14)</span>
+<span class="keyword-tag" style="font-size:22px">赋能 (8)</span>
+<span class="keyword-tag" style="font-size:21px">运营 (7)</span>
+<span class="keyword-tag" style="font-size:20px">教育 (6)</span>
+<span class="keyword-tag" style="font-size:19px">AI (6)</span>
+<span class="keyword-tag" style="font-size:18px">资源 (6)</span>
+<span class="keyword-tag" style="font-size:17px">授权 (6)</span>
+<span class="keyword-tag" style="font-size:16px">2026 (6)</span>
+<span class="keyword-tag" style="font-size:15px">交通运输 (6)</span>
+<span class="keyword-tag" style="font-size:14px">建设 (5)</span>
+<span class="keyword-tag" style="font-size:13px">治理 (5)</span>
+<span class="keyword-tag" style="font-size:12px">公共数据 (5)</span>
+<span class="keyword-tag" style="font-size:12px">产业 (5)</span>
+<span class="keyword-tag" style="font-size:12px">能源 (5)</span>
+<span class="keyword-tag" style="font-size:12px">融合 (4)</span>
+<span class="keyword-tag" style="font-size:12px">制造 (4)</span>
+<span class="keyword-tag" style="font-size:12px">若干 (4)</span>
+<span class="keyword-tag" style="font-size:12px">人才 (4)</span>
+<span class="keyword-tag" style="font-size:12px">算力 (4)</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
