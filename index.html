@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI政策日报 - 2026年8月19日</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #3b82f6, #8b5cf6); }
+        .timeline-dot { position: absolute; left: 18px; width: 14px; height: 14px; border-radius: 50%; background: #3b82f6; border: 3px solid white; box-shadow: 0 0 0 3px rgba(59,130,246,0.2); }
+        .policy-card { transition: all 0.3s ease; page-break-inside: avoid; }
+        .policy-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .tab-active { border-bottom: 3px solid #3b82f6; color: #1d4ed8; }
+        .word-cloud-item { transition: all 0.3s ease; }
+        .word-cloud-item:hover { transform: scale(1.1); }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            section { display: block !important; }
+            .policy-card { break-inside: avoid; page-break-inside: avoid; }
+        }
+        .chart-bar { transition: all 0.3s ease; }
+        .chart-bar:hover { opacity: 0.8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-violet-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-blue-200 text-sm font-medium mb-2">每日AI政策监测 | 2026年8月19日</p>
+                    <h1 class="text-4xl font-black tracking-tight">AI政策日报</h1>
+                    <p class="text-blue-200 mt-2 text-lg">全球人工智能政策追踪与分析平台</p>
+                </div>
+                <div class="text-right">
+                    <div class="bg-white/10 backdrop-blur rounded-2xl px-6 py-4">
+                        <p class="text-3xl font-bold">14</p>
+                        <p class="text-blue-200 text-sm">本月累计政策</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-6 mt-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                    <span>国内政策: 8项</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+                    <span>国外政策: 6项</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                    <span>数据更新时间: 2026-08-19</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b no-print">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex gap-8">
+                <button onclick="showSection('domestic')" id="tab-domestic" class="py-4 font-medium text-slate-600 hover:text-blue-600 tab-active">国内政策</button>
+                <button onclick="showSection('international')" id="tab-international" class="py-4 font-medium text-slate-600 hover:text-blue-600">国外政策</button>
+                <button onclick="showSection('analysis')" id="tab-analysis" class="py-4 font-medium text-slate-600 hover:text-blue-600">数据分析</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-8" id="pdf-content">
+
+        <!-- Domestic Section -->
+        <section id="section-domestic" class="space-y-8">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-slate-900">国内AI政策分析</h2>
+                <button onclick="window.print()" class="no-print bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    下载PDF报告
+                </button>
+            </div>
+
+            <!-- Timeline -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm">1</span>
+                    8月政策发布时间线
+                </h3>
+                <div class="relative pl-12 space-y-6">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月18日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">上海</span>
+                            </div>
+                            <p class="text-sm text-slate-700">上海市经济信息化委发布科学智能"百团百项"储备项目遴选通知</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月17日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">湖南</span>
+                            </div>
+                            <p class="text-sm text-slate-700">湖南省发布《关于加快智能机器人产业发展的实施意见》</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月14日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">广东</span>
+                            </div>
+                            <p class="text-sm text-slate-700">广州海珠区发布省内首个词元经济专项政策"词元八条"</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月10日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">北京</span>
+                            </div>
+                            <p class="text-sm text-slate-700">北京经开区发布"词元十条"，全市首个词元经济专项政策</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月4日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">贵州</span>
+                            </div>
+                            <p class="text-sm text-slate-700">贵州省发布《"人工智能+制造"实施方案》</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月4日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">山东</span>
+                            </div>
+                            <p class="text-sm text-slate-700">青岛市启动人工智能"六个一批"培育工程</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月2日</span>
+                                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">山东</span>
+                            </div>
+                            <p class="text-sm text-slate-700">山东省12部门联合印发AI OPC创新发展行动方案</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px;"></div>
+                        <div class="bg-blue-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-blue-900">8月1日</span>
+                                <span class="text-xs bg-red-200 text-red-800 px-2 py-1 rounded">中央</span>
+                            </div>
+                            <p class="text-sm text-slate-700">国家发改委、工信部、海关总署等多部门围绕AI发展密集部署</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Details -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-sm">2</span>
+                    本月国内政策详情
+                </h3>
+                <div class="space-y-6">
+                    <!-- Policy 1 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">上海市科学智能"百团百项"储备项目遴选</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-18 | 政策性质: 项目申报通知</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">上海</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">上海市经济和信息化委员会</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">上海市经济和信息化委员会</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>聚焦重大科学问题攻关、科学智能基础能力建设2个专题共4个方向</li>
+                                <li>支持高风险、高价值科学问题，推动通用科学大模型与学科模型协同推理技术突破</li>
+                                <li>加强科学数据结构化表征、科学数据治理工具链、科学实验智能体等技术研究</li>
+                                <li>体系化推进科学智能，孵化创新企业</li>
+                            </ul>
+                        </div>
+                        <a href="http://www.sheitc.sh.gov.cn/cyfz/20260814/22ac8801c5ae402eab93d98303414abd.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 2 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">湖南省关于加快智能机器人产业发展的实施意见</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-17 | 政策性质: 产业实施意见</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">湖南</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">湖南省人民政府办公厅</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">省发展改革委、省教育厅、省科技厅、省工信厅等</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>谋划部署"十大重点工程"：链主企业培育、优势制造能力转化、产业链闭环、产业集聚提质等</li>
+                                <li>到2028年全省智能机器人产业链营收力争突破2000亿元</li>
+                                <li>推进湖南省"人工智能+"十大技术创新平台建设</li>
+                                <li>采取"揭榜挂帅"、"赛马制"等方式开展跨领域协同攻关</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">此前湖南以通用AI政策为主，本次首次专门针对智能机器人产业出台系统性实施意见，明确"十大工程"和千亿营收目标，体现从宽泛AI布局到机器人细分赛道的战略聚焦。</p>
+                        </div>
+                        <a href="https://www.hunan.gov.cn/hnszf/hnyw/zwdt/202608/t20260818_34046302.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 3 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">广州海珠区"词元八条"支持词元经济高质量发展</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-14 | 政策性质: 专项产业扶持政策</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">广东</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">广州市海珠区人民政府</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">海珠区科工商信局</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>广东省首个词元经济专项政策，单项最高扶持金额500万元</li>
+                                <li>游戏、数字文娱列为核心应用场景，支持AI赋能游戏研发、智能NPC、剧情生成</li>
+                                <li>覆盖词元"生产-流通-消费-增值"全链条：产出效率、服务聚合、分发中枢、应用场景、OPC培育</li>
+                                <li>同步落地全省首个"Token贷"金融产品，企业可依据词元消耗、业务合同获取授信</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">区别于传统AI产业扶持，首次将"词元(Token)"作为独立生产要素进行全链条政策设计，并首创"Token贷"金融产品，体现对AI大模型时代新型经济形态的精准把握。</p>
+                        </div>
+                        <a href="https://www.nfnews.com/content/xovKdYXpyJ.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 4 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">北京经开区"词元十条"支持词元驱动智能经济</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-10 | 政策性质: 产业专项政策</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">北京</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">北京经济技术开发区管理委员会</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">经开区管委会经济发展局</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>北京市首个聚焦词元全产业链的系统性支持政策</li>
+                                <li>以词元新型生产要素布局为抓手，深化算电协同与硬件优化</li>
+                                <li>高标准建设万卡级词元工厂，提升区域算力规模</li>
+                                <li>发放算力券、词元券、OPC券夯实应用生态</li>
+                                <li>形成"工厂供词元、平台分词元、社区用词元"完整产业闭环</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">区别于市级"智能体十条"，这是北京市首个词元经济全产业链专项政策，聚焦词元这一AI时代新型生产要素，强调"生产-分发-交易-应用"全链条闭环。</p>
+                        </div>
+                        <a href="https://www.beijing.gov.cn/fuwu/lqfw/gggs/202608/t20260818_4827533.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 5 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">贵州省"人工智能+制造"实施方案</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-04 | 政策性质: 行业实施方案</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">贵州</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">贵州省工业和信息化厅等八部门</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">省工信厅、省委网信办、省发改委、省教育厅等</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>确立"三步走"发展目标：到2026年底培育先进级、卓越级智能工厂</li>
+                                <li>到2028年底实现AI深度赋能"6+3"现代化工业体系</li>
+                                <li>培育一批领航级智能工厂，形成行业协同发展的规模效应</li>
+                                <li>培育数据标注、数据交易、智算服务等数据产业，完善"数商"生态</li>
+                                <li>发展智能机器人、无人机、智能专用设备等产业</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">首次针对贵州"6+3"现代化工业体系制定专项AI赋能方案，强调分阶段推进（2026、2028节点），并结合贵州大数据产业优势提出"数商"生态建设。</p>
+                        </div>
+                        <a href="https://www.guizhou.gov.cn/home/gzyw/202608/t20260804_90690369.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 6 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">青岛市人工智能"六个一批"培育工程</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-04 | 政策性质: 产业培育通知</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">山东</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">青岛市工业和信息化局</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">市工信局、各区市工业和信息化主管部门</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>一批标志性新产品：具身智能机器人等重点产品</li>
+                                <li>一批实景实训应用场景：构建"实景实训-数据沉淀-产品迭代-规模部署"闭环</li>
+                                <li>一批人工智能高成长企业：遴选培育技术研发、产品创新、场景应用成效显著企业</li>
+                                <li>充分发挥青岛市工业体系完备、制造业场景丰富的综合优势</li>
+                            </ul>
+                        </div>
+                        <a href="http://gxj.qingdao.gov.cn/tzgg/202608/t20260804_10693402.shtml" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 7 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">山东省支持人工智能OPC创新发展行动方案</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-02 | 政策性质: 创新发展方案</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">山东</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">山东省工业和信息化厅等12部门</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监督单位</p>
+                                <p class="font-medium text-sm">省工信厅、省委组织部、省发改委、省教育厅等12部门</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>培育壮大AI OPC（One Person Company，一人公司）新型市场主体</li>
+                                <li>推动"AI+超级个体"新型创业模式加速落地</li>
+                                <li>力争3年内建成百个特色载体，培育千家技术型OPC</li>
+                                <li>集聚万名人工智能OPC创新人才</li>
+                                <li>创新"研发贷""模型贷""知识产权贷"等特色信贷产品</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">全国首个省级"AI OPC（一人公司）"专项政策，12部门联合发文，创新性提出"AI+超级个体"模式，配套专属金融产品，代表政策从扶持大企业向赋能个体创新者的转向。</p>
+                        </div>
+                        <a href="http://www.shandong.gov.cn/art/2026/8/2/art_97560_734814.html" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 8 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">多部门围绕人工智能发展密集部署</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-01 | 政策性质: 多部门协同部署</p>
+                            </div>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-medium">中央</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布单位</p>
+                                <p class="font-medium text-sm">国家发改委、工信部、海关总署等</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">政策背景</p>
+                                <p class="font-medium text-sm">贯彻落实国务院《关于深入实施"人工智能+"行动的意见》</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">部署要点</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>国家发改委：推进"人工智能+"行动，加强算力基础设施建设</li>
+                                <li>工信部：实施人工智能科技伦理审查与服务先导计划</li>
+                                <li>海关总署：优化AI相关产品进出口监管流程</li>
+                                <li>多部门协同推进AI赋能制造业、服务业等实体经济领域</li>
+                            </ul>
+                        </div>
+                        <a href="https://news.cctv.cn/2026/08/01/ARTIiz5NKkmsqeju4a7u1n58260801.shtml" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Section -->
+        <section id="section-international" class="space-y-8 hidden">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-slate-900">国外AI政策分析</h2>
+                <button onclick="window.print()" class="no-print bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    下载PDF报告
+                </button>
+            </div>
+
+            <!-- Timeline -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-sm">1</span>
+                    8月政策发布时间线
+                </h3>
+                <div class="relative pl-12 space-y-6">
+                    <div class="timeline-line" style="background: linear-gradient(to bottom, #f97316, #ef4444);"></div>
+                    
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px; background: #f97316;"></div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-orange-900">8月11日</span>
+                                <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded">美国</span>
+                            </div>
+                            <p class="text-sm text-slate-700">美国《人工智能问责法案2026》正式发布</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px; background: #f97316;"></div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-orange-900">8月2日</span>
+                                <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded">欧盟</span>
+                            </div>
+                            <p class="text-sm text-slate-700">EU AI Act扩大实施，透明度规则与执法架构生效</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px; background: #f97316;"></div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-orange-900">8月</span>
+                                <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded">美国</span>
+                            </div>
+                            <p class="text-sm text-slate-700">美国联邦AI风险管理法案2026提交国会审议</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="timeline-dot" style="top: 6px; background: #f97316;"></div>
+                        <div class="bg-orange-50 rounded-xl p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-orange-900">8月</span>
+                                <span class="text-xs bg-orange-200 text-orange-800 px-2 py-1 rounded">日本-欧盟</span>
+                            </div>
+                            <p class="text-sm text-slate-700">日欧数字伙伴关系第四次会议，推进AI治理合作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Details -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-sm">2</span>
+                    本月国外政策详情
+                </h3>
+                <div class="space-y-6">
+                    <!-- Policy 1 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">EU AI Act Enforcement Expansion</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-02 | 政策性质: 法规执法生效</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">欧盟</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布机构</p>
+                                <p class="font-medium text-sm">European Commission AI Office</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">执法机构</p>
+                                <p class="font-medium text-sm">EU AI Office + National Authorities</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">详细政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>Article 50透明度义务生效：AI交互披露、合成内容机器可读标记、深度伪造标注</li>
+                                <li>聊天机器人和交互式AI系统必须告知用户其正在与AI而非人类交互</li>
+                                <li>通用人工智能(GPAI)提供商执法权激活，违规罚款可达全球营业额3%或1500万欧元</li>
+                                <li>高风险AI系统(Annex III)执行推迟至2027年12月2日，Annex I推迟至2028年8月2日</li>
+                                <li>禁止性AI行为自2025年2月起已生效，包括社会评分、实时生物识别等</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">此前EU AI Act为过渡期（2024年8月生效、2025年2月禁止条款、2025年8月GPAI义务），8月2日起正式进入执法阶段，处罚权与透明度义务全面落地。</p>
+                        </div>
+                        <a href="https://cyprus.representation.ec.europa.eu/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august-2026-07-31_hu" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 2 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">US AI Accountability Act of 2026</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08-11 | 政策性质: 联邦立法</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">美国</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">发布机构</p>
+                                <p class="font-medium text-sm">Biden-Harris Administration + Congressional Leaders</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">监管机构</p>
+                                <p class="font-medium text-sm">Department of Commerce / FTC</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">详细政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>强制数字水印：所有AI生成图像、视频、音频必须携带隐形数字水印</li>
+                                <li>年度第三方偏见审计：覆盖种族、性别、年龄、残疾状况等受保护特征</li>
+                                <li>审计摘要必须公布于公司网站并提交FTC联邦登记处</li>
+                                <li>设立AI监管委员会，有权暂停对公共安全、国家安全构成"高风险"的AI系统部署</li>
+                                <li>透明度报告：必须公布AI系统工作原理、使用数据及产出结果</li>
+                                <li>解释权和人工复核权：受影响个人有权获得AI决策的清晰解释，关键决策须有人工复核</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 rounded-lg p-4 mb-4">
+                            <p class="text-xs text-amber-700 font-medium mb-1">与前期政策区别</p>
+                            <p class="text-sm text-amber-800">此前美国缺乏联邦级AI统一立法，由各州分散监管（如科罗拉多州AI法）。本次是美国历史上最全面的联邦AI监管尝试，建立统一的国家标准和执法架构。</p>
+                        </div>
+                        <a href="https://xthe.com/xthe-com-tech-news/us-government-unveils-sweeping-ai-regulation-framework-for-2026-what-it-means-for-tech-giants-and-everyday-users/" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 3 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Federal AI Risk Management Act of 2026</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08 | 政策性质: 联邦法案</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">美国</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">提交机构</p>
+                                <p class="font-medium text-sm">US Congress (House & Senate)</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">标准机构</p>
+                                <p class="font-medium text-sm">National Institute of Standards and Technology (NIST)</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">详细政策要求</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>要求所有联邦机构使用NIST开发的人工智能风险管理框架</li>
+                                <li>设立500亿美元联邦AI创新基金（5年期）：200亿大学研究、150亿初创企业、100亿基础设施</li>
+                                <li>开发者安全港条款：遵循NIST标准、及时修复漏洞、保持完整测试记录可获责任保护</li>
+                                <li>部署者责任：对未遵循安全指南导致的滥用承担责任</li>
+                                <li>连带责任：双方均对损害有贡献时共同承担责任</li>
+                            </ul>
+                        </div>
+                        <a href="https://www.govinfo.gov/content/pkg/BILLS-119hr8819ih/pdf/BILLS-119hr8819ih.pdf" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+
+                    <!-- Policy 4 -->
+                    <div class="policy-card border border-slate-200 rounded-xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-900">Japan-EU Digital Partnership: AI Governance Cooperation</h4>
+                                <p class="text-sm text-slate-500 mt-1">发布日期: 2026-08 | 政策性质: 国际合作框架</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">日本-欧盟</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">参与机构</p>
+                                <p class="font-medium text-sm">日本总务省(MIC) + 欧盟DG CONNECT</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-lg p-4">
+                                <p class="text-xs text-slate-500 mb-1">合作基础</p>
+                                <p class="font-medium text-sm">日本AI基本法(2025年9月施行) + EU AI Act</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-xs text-slate-500 mb-2">详细合作内容</p>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>日欧数字伙伴关系第四次会议在布鲁塞尔举行</li>
+                                <li>发布联合声明，建立AI透明度领域合作框架</li>
+                                <li>推动日本AI基本法与EU AI Act的互认与协调</li>
+                                <li>日本AI基本法核心原则：透明性、说明可能性、人间监督</li>
+                                <li>英国方面：数据使用与访问法2025取代UK GDPR第22条框架，雇佣权利法2025将AI辅助招聘等纳入法定审查</li>
+                            </ul>
+                        </div>
+                        <a href="https://grjapan.com/sites/default/files/content/articles/files/20260525%20GR%20Japan%20Industry%20Insight%20Tech%20%20AI.pdf" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            查看原文来源
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="section-analysis" class="space-y-8 hidden">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-slate-900">数据可视化分析</h2>
+                <button onclick="window.print()" class="no-print bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    下载PDF报告
+                </button>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Chart 1: Policy Count by Region -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h3 class="font-bold mb-4">8月政策发布地域分布</h3>
+                    <svg viewBox="0 0 400 250" class="w-full">
+                        <!-- Legend -->
+                        <rect x="20" y="10" width="12" height="12" fill="#3b82f6"/><text x="38" y="21" font-size="11" fill="#475569">北京</text>
+                        <rect x="80" y="10" width="12" height="12" fill="#6366f1"/><text x="98" y="21" font-size="11" fill="#475569">上海</text>
+                        <rect x="140" y="10" width="12" height="12" fill="#8b5cf6"/><text x="158" y="21" font-size="11" fill="#475569">广东</text>
+                        <rect x="200" y="10" width="12" height="12" fill="#a855f7"/><text x="218" y="21" font-size="11" fill="#475569">湖南</text>
+                        <rect x="260" y="10" width="12" height="12" fill="#d946ef"/><text x="278" y="21" font-size="11" fill="#475569">贵州</text>
+                        <rect x="320" y="10" width="12" height="12" fill="#ec4899"/><text x="338" y="21" font-size="11" fill="#475569">山东</text>
+                        
+                        <!-- Donut chart -->
+                        <g transform="translate(200, 140)">
+                            <circle r="70" fill="none" stroke="#3b82f6" stroke-width="25" stroke-dasharray="44 396" transform="rotate(-90)"/>
+                            <circle r="70" fill="none" stroke="#6366f1" stroke-width="25" stroke-dasharray="44 396" stroke-dashoffset="-44" transform="rotate(-90)"/>
+                            <circle r="70" fill="none" stroke="#8b5cf6" stroke-width="25" stroke-dasharray="44 396" stroke-dashoffset="-88" transform="rotate(-90)"/>
+                            <circle r="70" fill="none" stroke="#a855f7" stroke-width="25" stroke-dasharray="44 396" stroke-dashoffset="-132" transform="rotate(-90)"/>
+                            <circle r="70" fill="none" stroke="#d946ef" stroke-width="25" stroke-dasharray="44 396" stroke-dashoffset="-176" transform="rotate(-90)"/>
+                            <circle r="70" fill="none" stroke="#ec4899" stroke-width="25" stroke-dasharray="88 396" stroke-dashoffset="-220" transform="rotate(-90)"/>
+                            <circle r="45" fill="white"/>
+                            <text y="5" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">14</text>
+                            <text y="20" text-anchor="middle" font-size="10" fill="#64748b">项政策</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Chart 2: Policy Type Distribution -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h3 class="font-bold mb-4">政策类型分布</h3>
+                    <svg viewBox="0 0 400 250" class="w-full">
+                        <!-- Bars -->
+                        <rect x="40" y="190" width="40" height="20" fill="#3b82f6" rx="4"/>
+                        <rect x="100" y="150" width="40" height="60" fill="#6366f1" rx="4"/>
+                        <rect x="160" y="170" width="40" height="40" fill="#8b5cf6" rx="4"/>
+                        <rect x="220" y="190" width="40" height="20" fill="#f97316" rx="4"/>
+                        <rect x="280" y="160" width="40" height="50" fill="#ef4444" rx="4"/>
+                        <rect x="340" y="180" width="40" height="30" fill="#f59e0b" rx="4"/>
+                        
+                        <!-- Labels -->
+                        <text x="60" y="230" text-anchor="middle" font-size="10" fill="#475569">产业扶持</text>
+                        <text x="120" y="230" text-anchor="middle" font-size="10" fill="#475569">项目遴选</text>
+                        <text x="180" y="230" text-anchor="middle" font-size="10" fill="#475569">实施方案</text>
+                        <text x="240" y="230" text-anchor="middle" font-size="10" fill="#475569">监管执法</text>
+                        <text x="300" y="230" text-anchor="middle" font-size="10" fill="#475569">联邦立法</text>
+                        <text x="360" y="230" text-anchor="middle" font-size="10" fill="#475569">国际合作</text>
+                        
+                        <!-- Values -->
+                        <text x="60" y="180" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">3</text>
+                        <text x="120" y="140" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">1</text>
+                        <text x="180" y="160" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">3</text>
+                        <text x="240" y="180" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">1</text>
+                        <text x="300" y="150" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">2</text>
+                        <text x="360" y="170" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">1</text>
+                        
+                        <!-- Axis -->
+                        <line x1="30" y1="210" x2="390" y2="210" stroke="#cbd5e1" stroke-width="1"/>
+                    </svg>
+                </div>
+
+                <!-- Chart 3: Timeline Comparison -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h3 class="font-bold mb-4">国内外政策发布趋势（8月）</h3>
+                    <svg viewBox="0 0 400 220" class="w-full">
+                        <!-- Grid lines -->
+                        <line x1="50" y1="180" x2="380" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="50" y1="140" x2="380" y2="140" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="50" y1="100" x2="380" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="50" y1="60" x2="380" y2="60" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="50" y1="20" x2="380" y2="20" stroke="#e2e8f0" stroke-width="1"/>
+                        
+                        <!-- X axis labels -->
+                        <text x="50" y="200" text-anchor="middle" font-size="10" fill="#475569">8/1</text>
+                        <text x="97" y="200" text-anchor="middle" font-size="10" fill="#475569">8/2</text>
+                        <text x="144" y="200" text-anchor="middle" font-size="10" fill="#475569">8/4</text>
+                        <text x="191" y="200" text-anchor="middle" font-size="10" fill="#475569">8/10</text>
+                        <text x="238" y="200" text-anchor="middle" font-size="10" fill="#475569">8/11</text>
+                        <text x="285" y="200" text-anchor="middle" font-size="10" fill="#475569">8/14</text>
+                        <text x="332" y="200" text-anchor="middle" font-size="10" fill="#475569">8/17</text>
+                        <text x="379" y="200" text-anchor="middle" font-size="10" fill="#475569">8/18</text>
+                        
+                        <!-- Domestic line (blue) -->
+                        <polyline points="50,140 97,140 144,100 191,60 238,180 285,60 332,60 379,60" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                        <circle cx="50" cy="140" r="4" fill="#3b82f6"/>
+                        <circle cx="97" cy="140" r="4" fill="#3b82f6"/>
+                        <circle cx="144" cy="100" r="4" fill="#3b82f6"/>
+                        <circle cx="191" cy="60" r="4" fill="#3b82f6"/>
+                        <circle cx="238" cy="180" r="4" fill="#3b82f6"/>
+                        <circle cx="285" cy="60" r="4" fill="#3b82f6"/>
+                        <circle cx="332" cy="60" r="4" fill="#3b82f6"/>
+                        <circle cx="379" cy="60" r="4" fill="#3b82f6"/>
+                        
+                        <!-- International line (orange) -->
+                        <polyline points="50,180 97,140 144,180 191,180 238,60 285,180 332,180 379,180" fill="none" stroke="#f97316" stroke-width="2"/>
+                        <circle cx="50" cy="180" r="4" fill="#f97316"/>
+                        <circle cx="97" cy="140" r="4" fill="#f97316"/>
+                        <circle cx="144" cy="180" r="4" fill="#f97316"/>
+                        <circle cx="191" cy="180" r="4" fill="#f97316"/>
+                        <circle cx="238" cy="60" r="4" fill="#f97316"/>
+                        <circle cx="285" cy="180" r="4" fill="#f97316"/>
+                        <circle cx="332" cy="180" r="4" fill="#f97316"/>
+                        <circle cx="379" cy="180" r="4" fill="#f97316"/>
+                        
+                        <!-- Legend -->
+                        <line x1="260" y1="30" x2="280" y2="30" stroke="#3b82f6" stroke-width="2"/>
+                        <text x="285" y="34" font-size="11" fill="#475569">国内</text>
+                        <line x1="320" y1="30" x2="340" y2="30" stroke="#f97316" stroke-width="2"/>
+                        <text x="345" y="34" font-size="11" fill="#475569">国外</text>
+                    </svg>
+                </div>
+
+                <!-- Chart 4: Keyword Frequency -->
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+                    <h3 class="font-bold mb-4">政策关键词热度Top10</h3>
+                    <svg viewBox="0 0 400 250" class="w-full">
+                        <!-- Bars horizontal -->
+                        <rect x="80" y="20" width="280" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="42" width="240" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="64" width="180" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="86" width="160" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="108" width="140" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="130" width="120" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="152" width="100" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="174" width="90" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="196" width="80" height="16" fill="#6366f1" rx="3"/>
+                        <rect x="80" y="218" width="80" height="16" fill="#6366f1" rx="3"/>
+                        
+                        <!-- Labels -->
+                        <text x="75" y="32" text-anchor="end" font-size="10" fill="#475569">智能</text>
+                        <text x="75" y="54" text-anchor="end" font-size="10" fill="#475569">词元</text>
+                        <text x="75" y="76" text-anchor="end" font-size="10" fill="#475569">AI+</text>
+                        <text x="75" y="98" text-anchor="end" font-size="10" fill="#475569">机器人</text>
+                        <text x="75" y="120" text-anchor="end" font-size="10" fill="#475569">算力</text>
+                        <text x="75" y="142" text-anchor="end" font-size="10" fill="#475569">透明度</text>
+                        <text x="75" y="164" text-anchor="end" font-size="10" fill="#475569">制造</text>
+                        <text x="75" y="186" text-anchor="end" font-size="10" fill="#475569">模型</text>
+                        <text x="75" y="208" text-anchor="end" font-size="10" fill="#475569">数据</text>
+                        <text x="75" y="230" text-anchor="end" font-size="10" fill="#475569">场景</text>
+                        
+                        <!-- Values -->
+                        <text x="365" y="32" font-size="10" fill="#1e293b" font-weight="bold">15</text>
+                        <text x="325" y="54" font-size="10" fill="#1e293b" font-weight="bold">12</text>
+                        <text x="265" y="76" font-size="10" fill="#1e293b" font-weight="bold">8</text>
+                        <text x="245" y="98" font-size="10" fill="#1e293b" font-weight="bold">7</text>
+                        <text x="225" y="120" font-size="10" fill="#1e293b" font-weight="bold">6</text>
+                        <text x="205" y="142" font-size="10" fill="#1e293b" font-weight="bold">5</text>
+                        <text x="185" y="164" font-size="10" fill="#1e293b" font-weight="bold">5</text>
+                        <text x="175" y="186" font-size="10" fill="#1e293b" font-weight="bold">5</text>
+                        <text x="165" y="208" font-size="10" fill="#1e293b" font-weight="bold">4</text>
+                        <text x="165" y="230" font-size="10" fill="#1e293b" font-weight="bold">4</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Word Cloud -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="font-bold mb-6">政策热词云</h3>
+                <div class="flex flex-wrap gap-3 justify-center items-center min-h-[200px]">
+                    <span class="word-cloud-item text-4xl font-black text-blue-600">词元经济</span>
+                    <span class="word-cloud-item text-3xl font-bold text-indigo-600">智能体</span>
+                    <span class="word-cloud-item text-3xl font-bold text-violet-600">具身智能</span>
+                    <span class="word-cloud-item text-2xl font-semibold text-purple-600">透明度</span>
+                    <span class="word-cloud-item text-2xl font-semibold text-pink-600">问责制</span>
+                    <span class="word-cloud-item text-xl font-medium text-rose-600">AI+制造</span>
+                    <span class="word-cloud-item text-xl font-medium text-orange-600">科学智能</span>
+                    <span class="word-cloud-item text-lg font-medium text-amber-600">机器人</span>
+                    <span class="word-cloud-item text-lg font-medium text-yellow-600">OPC</span>
+                    <span class="word-cloud-item text-lg font-medium text-lime-600">大模型</span>
+                    <span class="word-cloud-item text-base font-medium text-green-600">数据治理</span>
+                    <span class="word-cloud-item text-base font-medium text-emerald-600">算力</span>
+                    <span class="word-cloud-item text-base font-medium text-teal-600">伦理审查</span>
+                    <span class="word-cloud-item text-base font-medium text-cyan-600">数字水印</span>
+                    <span class="word-cloud-item text-sm font-medium text-sky-600">应用场景</span>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="font-bold mb-6">国内外政策对比分析</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="text-left p-3 rounded-tl-lg">对比维度</th>
+                                <th class="text-left p-3">国内政策</th>
+                                <th class="text-left p-3 rounded-tr-lg">国外政策</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-3 font-medium">核心导向</td>
+                                <td class="p-3">产业促进、应用落地、算力建设</td>
+                                <td class="p-3">风险监管、透明度、问责制</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">重点领域</td>
+                                <td class="p-3">词元经济、智能机器人、AI+制造、科学智能</td>
+                                <td class="p-3">高风险AI系统、偏见审计、数字水印</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">政策工具</td>
+                                <td class="p-3">补贴扶持、项目遴选、税收优惠、金融支持</td>
+                                <td class="p-3">强制审计、罚款处罚、合规登记、禁令</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">创新亮点</td>
+                                <td class="p-3">Token贷、算力券、OPC（一人公司）模式</td>
+                                <td class="p-3">数字水印强制、第三方偏见审计、联邦统一框架</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">趋势变化</td>
+                                <td class="p-3">从通用AI政策→细分赛道（词元、机器人、OPC）</td>
+                                <td class="p-3">从行业自律→强制执法（EU）/联邦立法（US）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+                <h3 class="font-bold mb-6">本月政策热点建设内容</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 rounded-xl p-6">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-blue-900 mb-2">词元经济基础设施</h4>
+                        <p class="text-sm text-blue-800">北京、广州等地率先布局词元生产工厂、分发平台、消费生态全链条，发放算力券、词元券等新型政策工具。</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6">
+                        <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-purple-900 mb-2">AI监管执法落地</h4>
+                        <p class="text-sm text-purple-800">EU AI Act进入执法阶段，美国推出联邦级AI问责法案，全球AI治理从"立法期"进入"执法期"。</p>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-6">
+                        <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center text-white mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold text-green-900 mb-2">超级个体赋能</h4>
+                        <p class="text-sm text-green-800">山东首创AI OPC（一人公司）政策，推动"AI+超级个体"模式，3年集聚万名创新人才，体现政策向个体创新者倾斜。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm">AI政策日报 | 每日更新全球人工智能政策动态 | 数据更新时间: 2026-08-19</p>
+            <p class="text-xs mt-2">本报告内容来源于政府公开文件、权威媒体报道，仅供参考</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            ['domestic', 'international', 'analysis'].forEach(s => {
+                document.getElementById('section-' + s).classList.add('hidden');
+                document.getElementById('tab-' + s).classList.remove('tab-active');
+            });
+            document.getElementById('section-' + section).classList.remove('hidden');
+            document.getElementById('tab-' + section).classList.add('tab-active');
+        }
+    </script>
+</body>
+</html>
